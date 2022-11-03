@@ -1,7 +1,12 @@
-'use strict'
-import { responseRandom, resultRandom } from "../api/callApiRandom.js";
+import {resultChars } from "../api/callApiChars.js";
 
-export const createDivRandom = () => {
+
+const input$$ = document.querySelector('input');
+const button$$ = document.querySelector('button');
+export const devolverNombre = () => {
+    const filtrado = resultChars.filter((personaje) => {
+        return personaje.name.toLowerCase().includes(input$$.value)
+    })
     const main$$ = document.querySelector('.main');
     const section$$ = document.createElement('section');
     section$$.classList.add('section');
@@ -9,10 +14,8 @@ export const createDivRandom = () => {
     const div$$ = document.createElement('div');
     div$$.classList.add('divContainerRandom');
     section$$.appendChild(div$$);
-    const hide$$ = document.querySelector('.main__search');
-    hide$$.remove();
-    const paintRandomChar = () => {
-        for (let item of resultRandom) {
+    const paintFilteredChar = () => {
+        for (let item of filtrado) {
             const srcImg = item.img;
             const newImg = document.createElement('img');
             newImg.src = srcImg;
@@ -39,6 +42,7 @@ export const createDivRandom = () => {
             div$$.appendChild(pAlive$$);
         }
     }
-    paintRandomChar();
+    paintFilteredChar();
 }
 
+const buttonEventListener = button$$.addEventListener('click', devolverNombre);

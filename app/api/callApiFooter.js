@@ -1,8 +1,13 @@
-export const responseFooterName = await fetch('https://breakingbadapi.com/api/characters');
+//* LLAMADAS A LA API DE CADA ENDPOINT PARA PINTAR EN EL FOOTER CADA ARRAY
+'use strict'
+const responseFooterName = await fetch('https://breakingbadapi.com/api/characters');
 export const resultFooterName = await responseFooterName.json();
-export const responseFooterEpisodes = await fetch('https://breakingbadapi.com/api/episodes');
+
+const responseFooterEpisodes = await fetch('https://breakingbadapi.com/api/episodes');
 export const resultFooterEpisodes = await responseFooterEpisodes.json();
-export const responseFooterQuotes = await fetch('https://breakingbadapi.com/api/quotes');
+
+const responseFooterQuotes = await fetch('https://breakingbadapi.com/api/quotes');
 export const resultFooterQuotes = await responseFooterQuotes.json();
-export const responseFooterDeaths = await fetch('https://breakingbadapi.com/api/deaths');
+
+const responseFooterDeaths = await fetch('https://breakingbadapi.com/api/deaths');
 export const resultFooterDeaths = await responseFooterDeaths.json();

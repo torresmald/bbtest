@@ -1,3 +1,4 @@
+'use strict'
 import { responseChars, resultChars } from "../api/callApiChars.js";
 
 export const createDivChar = () => {
@@ -8,11 +9,20 @@ export const createDivChar = () => {
     const div$$ = document.createElement('div');
     div$$.classList.add('divContainerChars');
     section$$.appendChild(div$$);
+    const hide$$ = document.querySelector('.main__search');
+    hide$$.classList.toggle('main__toggle');
     for (let item of resultChars) {
         const srcImg = item.img;
         const newImg = document.createElement('img');
         newImg.src = srcImg;
-        div$$.appendChild(newImg);
+        const pName$$ = document.createElement('p');
+        const name = item.name;
+        pName$$.textContent = `Nombre ${name}`;
+        const divItem$$ = document.createElement('div');
+        divItem$$.classList.add('divItem')
+        div$$.appendChild(divItem$$);
+        divItem$$.appendChild(newImg);
+        divItem$$.appendChild(pName$$);
         const showDetails = newImg.addEventListener('click', () => {
             div$$.classList.toggle('divContainerChars');
             div$$.classList.add('divContainerDetails');

@@ -1,4 +1,9 @@
+body {
+  height: 100vh;
+  background-color: antiquewhite;
+}
 .main {
+  margin-bottom: 30px;
   h2 {
     font-family: bbFont;
     font-weight: bolder;
@@ -34,11 +39,30 @@
     }
   }
   &__search {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    input {
+      width: 20%;
+      height: 80px;
+    }
+    button {
+      background-color: white;
+      padding: 0;
+      margin: 0;
+      height: 150px;
+      width: 150px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
     text-align: center;
   }
-  &__toggle {
-    display: none;
-  }
+
   .divContainerRandom {
     margin: 30px 0px;
     text-align: center;
@@ -61,6 +85,13 @@
       max-width: 300px;
       max-height: 300px;
     }
+    .divItem {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      width: 49%;
+    }
   }
   .divContainerDetails {
     text-align: center;
@@ -73,4 +104,3 @@
     }
   }
 }
-

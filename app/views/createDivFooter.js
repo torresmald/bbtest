@@ -1,3 +1,4 @@
+'use strict'
 import { resultFooterName, resultFooterEpisodes, resultFooterQuotes, resultFooterDeaths } from "../api/callApiFooter.js";
 
 export const createDivFooter = () => {

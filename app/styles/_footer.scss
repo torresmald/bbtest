@@ -1,8 +1,11 @@
 .footer{
+  padding: 20px;
+  hr{
+    margin-bottom: 20px;
+  }
   &__container{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 20px;
     color: $colorText;
   }
 }

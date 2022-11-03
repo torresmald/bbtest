@@ -5,7 +5,9 @@
 import {createDivChar} from "./views/createDivChar.js";
 import {createDivRandom} from "./views/createDivRandom.js";
 import {createDivFooter} from "./views/createDivFooter.js";
-import { resultFooterName, resultFooterQuotes, responseFooterEpisodes, responseFooterDeaths } from "./api/callApiFooter.js";
+import {devolverNombre} from "./views/filterChar.js";
+
+createDivFooter();
 
 const imgChars$ = document.querySelector('.imgChars');
 const showChars = imgChars$.addEventListener('click', () => {
@@ -13,14 +15,10 @@ const showChars = imgChars$.addEventListener('click', () => {
 })
 const imgRandom$ = document.querySelector('.imgRandom');
 const showRandom = imgRandom$.addEventListener('click', () => {
-    createDivRandom();
-    setTimeout(() =>{
-        location.reload();
-    }, 8000)
+        createDivRandom();
 })
 
-console.log(responseFooterDeaths)
-createDivFooter();
+
 
 
 
